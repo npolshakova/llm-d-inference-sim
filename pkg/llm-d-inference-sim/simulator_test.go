@@ -89,7 +89,7 @@ func startServerWithArgs(ctx context.Context, mode string, args []string) (*http
 
 	// start the http server
 	go func() {
-		if err := s.startServer(listener); err != nil {
+		if err := s.startServer(ctx, listener); err != nil {
 			logger.Error(err, "error starting server")
 		}
 	}()
